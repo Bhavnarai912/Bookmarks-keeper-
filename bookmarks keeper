@@ -1,0 +1,28 @@
+class ConfigurationPolicyPrefKeeper
+                    
+39    : private ConfigurationPolicyStoreInterface {
+                    
+40 public:
+                    
+41  explicit ConfigurationPolicyPrefKeeper(ConfigurationPolicyProvider* provider);
+                    
+42  virtual ~ConfigurationPolicyPrefKeeper();
+                    
+47
+                    
+48  // Compute the set of preference names that are different in |keeper|. This
+                    
+49  // includes preferences that are missing in either one.
+                    
+49  // includes preferences that are missing in either one.
+                    
+50  void GetDifferingPrefPaths(const ConfigurationPolicyPrefKeeper* other,
+                    
+51                             std::vector<std::string>* differing_prefs) const;
+                    
+115
+                    
+116  // Processes a policy that can disable the bookmarks bar. It can also affect
+                    
+117  // other preferences.
+                    
